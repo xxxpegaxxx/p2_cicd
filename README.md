@@ -20,99 +20,109 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
-Continuous Integration
-1. Create a Github Repo (if not created)
+## Continuous Integration
+* Create a Github Repo (if not created) with the below options
 	*  Public
 	*  Initialize with README
 	*  .gitignore - Python
+* Upload the following files
 	*  Upload hello.py and test_hello.py
-2. Open Azure Cloud Shell
-3. Create ssh-keys in Azure Cloud Shell
-	*  ssh-keygen -t rsa
+* Open Azure Cloud Shell
+* Create ssh-keys in Azure Cloud Shell
+	*  Use the ssh-keygen -t rsa to create keys
 	*  Print out the .pub (public key) - cat /home/odl_user/.ssh/id_rsa.pub
-	* Copy ssh key ( ssh-rsa) and place in azure portal
-4. Upload ssh-keys to Github
-	*  Settings --> SSH and GPG Keys
-	*  New SSH Keys
-5. Create scaffolding for the project (if not created)
-	* Github Repo - copy Clone with SSH 
-	*  git clone git@github.com:xxxpegaxxx/testrepo.git
+	* Copy ssh key (ssh-rsa) to place in the azure portal
+* Upload ssh-keys to Github
+	*  Go to Settings in your Github profile --> SSH and GPG Keys
+	*  Select New SSH Keys and paste the copied keys and click on Add Keys
+* Create scaffolding for the project (if not created)
+	* Go to Github Repo and copy Clone with SSH address
+	*  In the Azure terminal clone the repo using the following command - git clone git@github.com:xxxpegaxxx/testrepo.git 
+	   Results should look like this
 		![image](https://user-images.githubusercontent.com/101995184/196294981-11db30ae-9a76-4325-af1e-cb4d5bf9de6e.png)
 
-	*  cd cicd_p2/
-	*  git status
-	*  Git add README.md
-	*  Git commit -m "Adding a change to the README"
-	*  git config --global user.email "spackpega@aol.com
-	*  cicd_p2$ git config --global user.name "Carlos J Viera"
-	*  Git push
-6. Create Makeflie and requirements.txt
-	*  Touch Makefile
-		* Add 
-	
-	*  Touch requirements.txt
+	*  Change directory to project directory - cd cicd_p2/
+* Create Makefile and requirements.txt
+	* Run the touch command to create Makefile file
+	* Insert in the Makefile the following commands
 	install:
 		pip install --upgrade pip &&\
-			pip install -r requirements.txt
-	
+			pip install -r requirements.txt	
+			
 	test:
 		#python -m pytest -vv test_hello.py
-	
-	
+		
 	lint:
 		pylint --disable=R,C hello.py
-	
+		
 	all: install lint test
 	
-7. Github Actions
-	* Setup Workflow for ourselves
-	*  Remove from main.yml
-		○ Remove Comments
+	* Run the touch command to create requirements.txt file	
+	* Insert in the requirements.txt the following modules
+		pytest
+		pylint
+* Push changes into Github Repo		
+	*  run the git status command to see the changes
+	*  run the git add . command to add all the updated anew files 
+	*  run the git commit -m "Adding a change to the README" command
+	*  The folowing commands are only requireed if pushing for the first time
+	 	git config --global user.email "spackpega@aol.com
+	  	git config --global user.name "Carlos J Viera"
+	*  run the Git push command to push the changes up to the repo
 
+	*  
+* Setting up Github Actions
+	*  Go to the Actions Tab in your Github repo
+	*  Select - Setup Workflow for ourselves
+	*  Commit the main.yml file.
+	*  Workflows should now be enabled
 
-Continuous Delivery
+## Continuous Delivery
 
-1. Create a new repo
-	*  Clone repo to shell
-2. Create virtual env
+* Create a new repo (If non exist)
+	*  Clone repo to shell using git clone command
+* Create a virtual environment in terminal
 	*  cd in to project
-	*  python3 -m venv ~/.p2_cicd
-	source ~/.p2_cicd/bin/activate
-	*  Run make all
+	*  run the floowing 2 commands
+		python3 -m venv ~/.p2_cicd
+		source ~/.p2_cicd/bin/activate
+	*  Install modules by running the Run make all commans
+	   Results should look like this
 		![image](https://user-images.githubusercontent.com/101995184/196295119-25b0843c-705f-466a-8a24-00e784199daa.png)
 
-3. Create app service in shell
-	*  az webapp up -n cjvp2app
-	*  Verify it works - 
-		https://cjvp2app.azurewebsites.net
-		![image](https://user-images.githubusercontent.com/101995184/196295163-483eba87-1fe7-477e-b4fc-18ac5e5db12f.png)
+* Create app service in shell
+	*  Run the following command - az webapp up -n cjvp2app to create the app service
+	 	![image](https://user-images.githubusercontent.com/101995184/196295163-483eba87-1fe7-477e-b4fc-18ac5e5db12f.png)
+	*  Verify that the app works - 
+		https://cjvp2app.azurewebsites.net		
 		![image](https://user-images.githubusercontent.com/101995184/196295217-84786710-5901-40e5-98f6-77331c25adbc.png)
-
-
-4. Perform prediction
-	*  Change line in make_predict_azure_app.sh to 
+* Perform the prediction that returns back a JSON payload
+	*  Update the following line in the make_predict_azure_app.sh to 
 		-X POST https://cjvp2app.azurewebsites.net:$PORT/predict
-	*  Change security on file 
-		chmod +x make_predict_azure_app.sh
-	*  Run prediction - 
+	*  Run the prediction - 
 		./make_predict_azure_app.sh
-5. Got to Azure DevOps Organization
-6. Create new project
+	*  If you get an access denied then run the following command to change the security
+		chmod +x make_predict_azure_app.sh
+	*  Retry running bash file again
+	*  	./make_predict_azure_app.sh
+
+* Got to Azure DevOps Organization
+* Create a new project with the follwoing options
 	*  Private
-	*   Git
+	*  Git
 	*  Basic
-7. Create a new service connection
-	*  Project settings
+* Create a new service connection
+	*  Go to Project settings
 	*  Go to Azure Resource Manager and Pipeline
+	*  It should look like the below screenshot
 	 ![image](https://user-images.githubusercontent.com/101995184/196294326-556b7c32-d5cf-48c2-a25f-bb013034bc66.png)
 
-  
-  
-8. Go to Pipelines
-	*  Create Pipeline
-	*   Select Github
-	*  Python to Linux WeApp on Azure
-	*  Confirm YAML file created.
+
+* Go to Pipelines in Project
+	*  Create a new Pipeline
+	*  Select your Github repository
+	*  Pick Python to Linux WeApp on Azure
+	*  Confirm that the YAML file has been created in your repository
 	*  Pipeline should run and deploy
 		![image](https://user-images.githubusercontent.com/101995184/196295287-d7663126-de89-4e79-9120-fa21fd3b4e4c.png)
 
