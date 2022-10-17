@@ -22,32 +22,35 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 
 Continuous Integration
 1. Create a Github Repo (if not created)
-	• Public
-	• Initialize with README
-	• .gitignore - Python
-	• Upload hello.py and test_hello.py
+	*  Public
+	*  Initialize with README
+	*  .gitignore - Python
+	*  Upload hello.py and test_hello.py
 2. Open Azure Cloud Shell
 3. Create ssh-keys in Azure Cloud Shell
-	• ssh-keygen -t rsa
-	• Print out the .pub (public key) - cat /home/odl_user/.ssh/id_rsa.pub
-	• Copy ssh key ( ssh-rsa) and place in azure portal
+	*  ssh-keygen -t rsa
+	*  Print out the .pub (public key) - cat /home/odl_user/.ssh/id_rsa.pub
+	* Copy ssh key ( ssh-rsa) and place in azure portal
 4. Upload ssh-keys to Github
-	• Settings --> SSH and GPG Keys
-	• New SSH Keys
+	*  Settings --> SSH and GPG Keys
+	*  New SSH Keys
 5. Create scaffolding for the project (if not created)
-	1. Github Repo - copy Clone with SSH 
-	• git clone git@github.com:xxxpegaxxx/testrepo.git
-	• cd cicd_p2/
-	• git status
-	• Git add README.md
-	• Git commit -m "Adding a change to the README"
-	• git config --global user.email "spackpega@aol.com
-	• cicd_p2$ git config --global user.name "Carlos J Viera"
-	• Git push
+	* Github Repo - copy Clone with SSH 
+	*  git clone git@github.com:xxxpegaxxx/testrepo.git
+		![image](https://user-images.githubusercontent.com/101995184/196294981-11db30ae-9a76-4325-af1e-cb4d5bf9de6e.png)
+
+	*  cd cicd_p2/
+	*  git status
+	*  Git add README.md
+	*  Git commit -m "Adding a change to the README"
+	*  git config --global user.email "spackpega@aol.com
+	*  cicd_p2$ git config --global user.name "Carlos J Viera"
+	*  Git push
 6. Create Makeflie and requirements.txt
-	• Touch Makefile
+	*  Touch Makefile
+		* Add 
 	
-	• Touch requirements.txt
+	*  Touch requirements.txt
 	install:
 		pip install --upgrade pip &&\
 			pip install -r requirements.txt
@@ -62,48 +65,57 @@ Continuous Integration
 	all: install lint test
 	
 7. Github Actions
-	• Setup Workflow for ourselves
-	• Remove from main.yml
+	* Setup Workflow for ourselves
+	*  Remove from main.yml
 		○ Remove Comments
 
 
 Continuous Delivery
 
 1. Create a new repo
-	• Clone repo to shell
+	*  Clone repo to shell
 2. Create virtual env
-	• cd in to project
-	• python3 -m venv ~/.p2_cicd
+	*  cd in to project
+	*  python3 -m venv ~/.p2_cicd
 	source ~/.p2_cicd/bin/activate
-	• Run make install
+	*  Run make all
+		![image](https://user-images.githubusercontent.com/101995184/196295119-25b0843c-705f-466a-8a24-00e784199daa.png)
+
 3. Create app service in shell
-	• az webapp up -n cjvp2app
-	• Verify it works - 
+	*  az webapp up -n cjvp2app
+	*  Verify it works - 
 		https://cjvp2app.azurewebsites.net
+		![image](https://user-images.githubusercontent.com/101995184/196295163-483eba87-1fe7-477e-b4fc-18ac5e5db12f.png)
+		![image](https://user-images.githubusercontent.com/101995184/196295217-84786710-5901-40e5-98f6-77331c25adbc.png)
+
+
 4. Perform prediction
-	• Change line in make_predict_azure_app.sh to 
+	*  Change line in make_predict_azure_app.sh to 
 		-X POST https://cjvp2app.azurewebsites.net:$PORT/predict
-	• Change security on file 
+	*  Change security on file 
 		chmod +x make_predict_azure_app.sh
-	• Run prediction - 
+	*  Run prediction - 
 		./make_predict_azure_app.sh
 5. Got to Azure DevOps Organization
 6. Create new project
-	• Private
-	• Git
-	• Basic
+	*  Private
+	*   Git
+	*  Basic
 7. Create a new service connection
-	1. Project settings
-	2. Go to Azure Resource Manager and Pipeline
-	3. ![image](https://user-images.githubusercontent.com/101995184/196294326-556b7c32-d5cf-48c2-a25f-bb013034bc66.png)
+	*  Project settings
+	*  Go to Azure Resource Manager and Pipeline
+	 ![image](https://user-images.githubusercontent.com/101995184/196294326-556b7c32-d5cf-48c2-a25f-bb013034bc66.png)
 
   
   
 8. Go to Pipelines
-	• Create Pipeline
-	• Select Github
-	• Python to Linux WeApp on Azure
-	• Confirm YAML file created.
+	*  Create Pipeline
+	*   Select Github
+	*  Python to Linux WeApp on Azure
+	*  Confirm YAML file created.
+	*  Pipeline should run and deploy
+		![image](https://user-images.githubusercontent.com/101995184/196295287-d7663126-de89-4e79-9120-fa21fd3b4e4c.png)
+
 
 
 
