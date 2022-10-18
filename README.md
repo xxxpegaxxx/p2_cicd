@@ -10,8 +10,8 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 ## Project Plan
 <TODO: Project Plan
 
-* A link to a Trello board for the project - https://trello.com/b/qDuO5AoQ/project-2-ci-cd-pipeline#
-* A link to a spreadsheet that includes the original and final project plan>
+* Trello board for the P2_CICD Project - https://trello.com/b/qDuO5AoQ/project-2-ci-cd-pipeline#
+* Project Plan - https://github.com/xxxpegaxxx/p2_cicd/blob/0a2d67250ef19b5182be12edab68419c11084621/Project%20Plan%20-%20P2_CICD.xlsx
 
 ## Instructions
 
@@ -39,6 +39,7 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 	* Go to Github Repo and copy Clone with SSH address
 	*  In the Azure terminal clone the repo using the following command - git clone git@github.com:xxxpegaxxx/testrepo.git 
 	   Results should look like this
+	   
 		![image](https://user-images.githubusercontent.com/101995184/196294981-11db30ae-9a76-4325-af1e-cb4d5bf9de6e.png)
 
 	*  Change directory to project directory - cd cicd_p2/
@@ -60,7 +61,7 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 	* Run the touch command to create requirements.txt file	
 	* Insert in the requirements.txt the following modules
 		* pytest
-		*pylint
+		* pylint
 * Push changes into Github Repo		
 	*  run the git status command to see the changes
 	*  run the git add . command to add all the updated anew files 
@@ -86,12 +87,15 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 		* source ~/.p2_cicd/bin/activate
 	*  Install modules by running the Run make all commans
 	*  Results should look like this
+	
 		![image](https://user-images.githubusercontent.com/101995184/196295119-25b0843c-705f-466a-8a24-00e784199daa.png)
 
 * Create app service in shell
 	*  Run the following command - az webapp up -n cjvp2app to create the app service
+	
 	 	![image](https://user-images.githubusercontent.com/101995184/196295163-483eba87-1fe7-477e-b4fc-18ac5e5db12f.png)
-	*  Verify that the app works - https://cjvp2app.azurewebsites.net		
+	*  Verify that the app works - https://cjvp2app.azurewebsites.net	
+	
 		![image](https://user-images.githubusercontent.com/101995184/196295217-84786710-5901-40e5-98f6-77331c25adbc.png)
 * Perform the prediction that returns back a JSON payload
 	*  Update the following line in the make_predict_azure_app.sh to 
@@ -112,6 +116,7 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 	*  Go to Project settings
 	*  Go to Azure Resource Manager and Pipeline
 	*  It should look like the below screenshot
+	
 	 	![image](https://user-images.githubusercontent.com/101995184/196294326-556b7c32-d5cf-48c2-a25f-bb013034bc66.png)
 
 
@@ -121,9 +126,11 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 	*  Pick Python to Linux WeApp on Azure
 	*  Confirm that the YAML file has been created in your repository
 	*  Pipeline should now Build and Deploy
+	
 		![image](https://user-images.githubusercontent.com/101995184/196295287-d7663126-de89-4e79-9120-fa21fd3b4e4c.png)
 
 	* Here is the application running against a load test with locust
+	
 		![image](https://user-images.githubusercontent.com/101995184/196315362-3bb05004-67ce-44d0-b822-9f7c5bc5c526.png)
 
 
