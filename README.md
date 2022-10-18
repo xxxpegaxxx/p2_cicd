@@ -38,7 +38,7 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 * Create scaffolding for the project (if not created)
 	* Go to Github Repo and copy Clone with SSH address
 	*  In the Azure terminal clone the repo using the following command - git clone git@github.com:xxxpegaxxx/testrepo.git 
-	   Results should look like this
+	   * Results should look like this
 	   
 		![image](https://user-images.githubusercontent.com/101995184/196294981-11db30ae-9a76-4325-af1e-cb4d5bf9de6e.png)
 
