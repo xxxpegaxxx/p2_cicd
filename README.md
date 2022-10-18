@@ -45,32 +45,30 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 * Create Makefile and requirements.txt
 	* Run the touch command to create Makefile file
 	* Insert in the Makefile the following commands
-	install:
-		pip install --upgrade pip &&\
-			pip install -r requirements.txt	
+		* install:
+			pip install --upgrade pip &&\
+				pip install -r requirements.txt	
 			
-	test:
-		#python -m pytest -vv test_hello.py
+		* test:
+			python -m pytest -vv test_hello.py
 		
-	lint:
-		pylint --disable=R,C hello.py
+		* lint:
+			pylint --disable=R,C hello.py
 		
-	all: install lint test
+		* all: install lint test
 	
 	* Run the touch command to create requirements.txt file	
 	* Insert in the requirements.txt the following modules
-		pytest
-		pylint
+		* pytest
+		*pylint
 * Push changes into Github Repo		
 	*  run the git status command to see the changes
 	*  run the git add . command to add all the updated anew files 
 	*  run the git commit -m "Adding a change to the README" command
 	*  The folowing commands are only requireed if pushing for the first time
-	 	git config --global user.email "spackpega@aol.com
-	  	git config --global user.name "Carlos J Viera"
+	 	* git config --global user.email "spackpega@aol.com
+	  	* git config --global user.name "Carlos J Viera"
 	*  run the Git push command to push the changes up to the repo
-
-	*  
 * Setting up Github Actions
 	*  Go to the Actions Tab in your Github repo
 	*  Select - Setup Workflow for ourselves
@@ -84,17 +82,16 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 * Create a virtual environment in terminal
 	*  cd in to project
 	*  run the floowing 2 commands
-		python3 -m venv ~/.p2_cicd
-		source ~/.p2_cicd/bin/activate
+		* python3 -m venv ~/.p2_cicd
+		* source ~/.p2_cicd/bin/activate
 	*  Install modules by running the Run make all commans
-	   Results should look like this
+	*  Results should look like this
 		![image](https://user-images.githubusercontent.com/101995184/196295119-25b0843c-705f-466a-8a24-00e784199daa.png)
 
 * Create app service in shell
 	*  Run the following command - az webapp up -n cjvp2app to create the app service
 	 	![image](https://user-images.githubusercontent.com/101995184/196295163-483eba87-1fe7-477e-b4fc-18ac5e5db12f.png)
-	*  Verify that the app works - 
-		https://cjvp2app.azurewebsites.net		
+	*  Verify that the app works - https://cjvp2app.azurewebsites.net		
 		![image](https://user-images.githubusercontent.com/101995184/196295217-84786710-5901-40e5-98f6-77331c25adbc.png)
 * Perform the prediction that returns back a JSON payload
 	*  Update the following line in the make_predict_azure_app.sh to 
@@ -115,7 +112,7 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 	*  Go to Project settings
 	*  Go to Azure Resource Manager and Pipeline
 	*  It should look like the below screenshot
-	 ![image](https://user-images.githubusercontent.com/101995184/196294326-556b7c32-d5cf-48c2-a25f-bb013034bc66.png)
+	 	![image](https://user-images.githubusercontent.com/101995184/196294326-556b7c32-d5cf-48c2-a25f-bb013034bc66.png)
 
 
 * Go to Pipelines in Project
@@ -123,9 +120,11 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 	*  Select your Github repository
 	*  Pick Python to Linux WeApp on Azure
 	*  Confirm that the YAML file has been created in your repository
-	*  Pipeline should run and deploy
+	*  Pipeline should now Build and Deploy
 		![image](https://user-images.githubusercontent.com/101995184/196295287-d7663126-de89-4e79-9120-fa21fd3b4e4c.png)
 
+	* Here is the application running against a load test with locust
+		![image](https://user-images.githubusercontent.com/101995184/196315362-3bb05004-67ce-44d0-b822-9f7c5bc5c526.png)
 
 
 
