@@ -133,6 +133,12 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 	
 		![image](https://user-images.githubusercontent.com/101995184/196315362-3bb05004-67ce-44d0-b822-9f7c5bc5c526.png)
 
+## Step by Step video of a CI/CD Pipeline configuration in Azure
+
+https://youtu.be/eHETAP7rkCA
+
+
+
 
 
 * Project running on Azure App Service
