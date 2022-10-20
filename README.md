@@ -14,7 +14,7 @@ This is a  project on how to set up a Microsoft Azure CI/CD Pipeline. We will be
 
 ## Instructions
 
-<Below are the Instructions on how to setup a CI/CD pipeline in Azure
+Below are the Instructions on how to setup a CI/CD pipeline in Azure
 
 ## Continuous Integration
 * Create a Github Repo (if not created) with the below options
