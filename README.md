@@ -1,24 +1,20 @@
-# This is my new Project2 Repo !!!!
+# Project2 - CI/CD Setup
 
 [![CI](https://github.com/xxxpegaxxx/p2_cicd/actions/workflows/main.yml/badge.svg)](https://github.com/xxxpegaxxx/p2_cicd/actions/workflows/main.yml)
 
 
 # Overview
 
-A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussing how to clone and build your flask appication in Azure Shell setup Github Actions for Continuous Integrations. We will also be showing how to set up a Azure DevOps pipeline for Continuous Delivery.
+This is a  project on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussing how to clone and build your flask appication in Azure Shell setup Github Actions for Continuous Integrations. We will also be showing how to set up a Azure DevOps pipeline for Continuous Delivery.
 
 ## Project Plan
-<TODO: Project Plan
 
 * Trello board for the P2_CICD Project - https://trello.com/b/qDuO5AoQ/project-2-ci-cd-pipeline#
 * Project Plan - https://github.com/xxxpegaxxx/p2_cicd/blob/0a2d67250ef19b5182be12edab68419c11084621/Project%20Plan%20-%20P2_CICD.xlsx
 
 ## Instructions
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
-
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+<Below are the Instructions on how to setup a CI/CD pipeline in Azure
 
 ## Continuous Integration
 * Create a Github Repo (if not created) with the below options
@@ -106,6 +102,13 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 		chmod +x make_predict_azure_app.sh
 	*  Retry running bash file again
 	*  	./make_predict_azure_app.sh
+		*  Results should look like this
+			* Port: 443
+			* {"prediction":[20.35373177134412]}
+
+	* Output of streamed log files from deployed application can be access via the link below
+
+		https://github.com/xxxpegaxxx/p2_cicd/blob/34e6e4ddec65b8787f388d82e7db0cb792ce2edf/2022_10_19_10-30-0-62_default_docker.log.txt
 
 * Got to Azure DevOps Organization
 * Create a new project with the follwoing options
@@ -136,40 +139,3 @@ A roject on how to set up a Microsoft Azure CI/CD Pipeline. We will be discussin
 ## Step by Step video of a CI/CD Pipeline configuration in Azure
 
 https://youtu.be/eHETAP7rkCA
-
-
-
-
-
-* Project running on Azure App Service
-
-* Project cloned into Azure Cloud Shell
-
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-
-* Output of a test run
-
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
-
-* Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
-
-* Output of streamed log files from deployed application
-
-> 
-
-## Enhancements
-
-<TODO: A short description of how to improve the project in the future>
-
-## Demo 
-
-<TODO: Add link Screencast on YouTube>
