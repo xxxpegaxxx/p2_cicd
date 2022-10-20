@@ -1,0 +1,61 @@
+2022-10-19T13:04:21.815212538Z 
+2022-10-19T13:04:21.815258939Z   _____                               
+2022-10-19T13:04:21.815266840Z   /  _  \ __________ _________   ____  
+2022-10-19T13:04:21.815272540Z  /  /_\  \___   /  |  \_  __ \_/ __ \ 
+2022-10-19T13:04:21.815278340Z /    |    \/    /|  |  /|  | \/\  ___/ 
+2022-10-19T13:04:21.815283740Z \____|__  /_____ \____/ |__|    \___  >
+2022-10-19T13:04:21.815290441Z         \/      \/                  \/ 
+2022-10-19T13:04:21.815296141Z 
+2022-10-19T13:04:21.815301141Z A P P   S E R V I C E   O N   L I N U X
+2022-10-19T13:04:21.815306441Z 
+2022-10-19T13:04:21.815311741Z Documentation: http://aka.ms/webapp-linux
+2022-10-19T13:04:21.815316942Z Python 3.7.12
+2022-10-19T13:04:21.815322242Z Note: Any data outside '/home' is not persisted
+2022-10-19T13:04:23.377594662Z Starting OpenBSD Secure Shell server: sshd.
+2022-10-19T13:04:23.412879664Z App Command Line not configured, will attempt auto-detect
+2022-10-19T13:04:23.645437058Z Starting periodic command scheduler: cron.
+2022-10-19T13:04:23.645494459Z Launching oryx with: create-script -appPath /home/site/wwwroot -output /opt/startup/startup.sh -virtualEnvName antenv -defaultApp /opt/defaultsite -bindPort 8000
+2022-10-19T13:04:23.846030978Z Found build manifest file at '/home/site/wwwroot/oryx-manifest.toml'. Deserializing it...
+2022-10-19T13:04:23.867823765Z Build Operation ID: |fjYfcs285Qo=.5f842e73_
+2022-10-19T13:04:23.870644589Z Oryx Version: 0.2.20220308.4, Commit: c92fa6a2d6fc14dc9646f80e2bb2e393a5cdc258, ReleaseTagName: 20220308.4
+2022-10-19T13:04:23.870695389Z Output is compressed. Extracting it...
+2022-10-19T13:04:23.873760316Z Extracting '/home/site/wwwroot/output.tar.gz' to directory '/tmp/8dab1d18c9a81c0'...
+2022-10-19T13:04:36.759945173Z App path is set to '/tmp/8dab1d18c9a81c0'
+2022-10-19T13:04:36.807959009Z Detected an app based on Flask
+2022-10-19T13:04:36.809029121Z Generating `gunicorn` command for 'app:app'
+2022-10-19T13:04:36.875088058Z Writing output script to '/opt/startup/startup.sh'
+2022-10-19T13:04:37.194312519Z Using packages from virtual environment antenv located at /tmp/8dab1d18c9a81c0/antenv.
+2022-10-19T13:04:37.194386820Z Updated PYTHONPATH to ':/opt/startup/app_logs:/opt/startup/code_profiler:/tmp/8dab1d18c9a81c0/antenv/lib/python3.7/site-packages'
+2022-10-19T13:04:38.599686091Z [2022-10-19 13:04:38 +0000] [82] [INFO] Starting gunicorn 20.1.0
+2022-10-19T13:04:38.644602364Z [2022-10-19 13:04:38 +0000] [82] [INFO] Listening at: http://0.0.0.0:8000 (82)
+2022-10-19T13:04:38.645354672Z [2022-10-19 13:04:38 +0000] [82] [INFO] Using worker: sync
+2022-10-19T13:04:38.651873541Z [2022-10-19 13:04:38 +0000] [87] [INFO] Booting worker with pid: 87
+2022-10-19T13:04:48.256336986Z /tmp/8dab1d18c9a81c0/antenv/lib/python3.7/site-packages/scipy/__init__.py:149: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.16.0
+2022-10-19T13:04:48.256444887Z   UserWarning)
+2022-10-19T13:04:48.373776017Z 169.254.129.1 - - [19/Oct/2022:13:04:48 +0000] "GET /robots933456.txt HTTP/1.1" 404 207 "-" "HealthCheck/1.0"
+2022-10-19T13:04:48.990627684Z 169.254.129.1 - - [19/Oct/2022:13:04:48 +0000] "GET / HTTP/1.1" 200 50 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+2022-10-19T13:04:48.993994720Z 169.254.129.1 - - [19/Oct/2022:13:04:48 +0000] "GET / HTTP/1.1" 200 50 "-" "ReadyForRequest/1.0 (LocalCache)"
+2022-10-19T13:04:49.378330747Z [2022-10-19 13:04:49,377] INFO in app: JSON payload: %s json_payload
+2022-10-19T13:04:49.390724477Z [2022-10-19 13:04:49,390] INFO in app: inference payload DataFrame: %s inference_payload
+2022-10-19T13:04:49.392450795Z [2022-10-19 13:04:49,391] INFO in app: Scaling Payload: %s payload
+2022-10-19T13:04:49.410190081Z /tmp/8dab1d18c9a81c0/antenv/lib/python3.7/site-packages/sklearn/preprocessing/data.py:645: DataConversionWarning: Data with input dtype int64, float64 were all converted to float64 by StandardScaler.
+2022-10-19T13:04:49.410229781Z   return self.partial_fit(X, y)
+2022-10-19T13:04:49.410244581Z /tmp/8dab1d18c9a81c0/app.py:19: DataConversionWarning: Data with input dtype int64, float64 were all converted to float64 by StandardScaler.
+2022-10-19T13:04:49.410254581Z   scaled_adhoc_predict = scaler.transform(payload)
+2022-10-19T13:04:49.410263881Z [2022-10-19 13:04:49,408] ERROR in app: Exception on /predict [POST]
+2022-10-19T13:04:49.410272881Z Traceback (most recent call last):
+2022-10-19T13:04:49.410281082Z   File "/tmp/8dab1d18c9a81c0/antenv/lib/python3.7/site-packages/flask/app.py", line 2073, in wsgi_app
+2022-10-19T13:04:49.410289082Z     response = self.full_dispatch_request()
+2022-10-19T13:04:49.410296982Z   File "/tmp/8dab1d18c9a81c0/antenv/lib/python3.7/site-packages/flask/app.py", line 1518, in full_dispatch_request
+2022-10-19T13:04:49.410305182Z     rv = self.handle_user_exception(e)
+2022-10-19T13:04:49.410312482Z   File "/tmp/8dab1d18c9a81c0/antenv/lib/python3.7/site-packages/flask/app.py", line 1516, in full_dispatch_request
+2022-10-19T13:04:49.410320782Z     rv = self.dispatch_request()
+2022-10-19T13:04:49.410328182Z   File "/tmp/8dab1d18c9a81c0/antenv/lib/python3.7/site-packages/flask/app.py", line 1502, in dispatch_request
+2022-10-19T13:04:49.410335982Z     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+2022-10-19T13:04:49.410343682Z   File "/tmp/8dab1d18c9a81c0/app.py", line 69, in predict
+2022-10-19T13:04:49.410369582Z     prediction = list(clf.predict(scaled_payload))
+2022-10-19T13:04:49.410377583Z AttributeError: 'numpy.ndarray' object has no attribute 'predict'
+2022-10-19T13:04:49.418739670Z 169.254.129.1 - - [19/Oct/2022:13:04:49 +0000] "POST /predict HTTP/1.1" 500 265 "-" "curl/7.84.0"
+2022-10-19T13:04:49.422765312Z 169.254.129.1 - - [19/Oct/2022:13:04:49 +0000] "GET / HTTP/1.1" 200 50 "-" "ReadyForRequest/1.0 (AppInit)"
+2022-10-19T13:04:49.595222619Z 169.254.129.1 - - [19/Oct/2022:13:04:49 +0000] "GET /favicon.ico HTTP/1.1" 404 207 "https://cjvp2app.azurewebsites.net/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+
